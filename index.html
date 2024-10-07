@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Dharshan S - Resume</title>
     <link rel="stylesheet" href="index.css"> <!-- External CSS -->
+    <!-- Include html2pdf.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="resume-content">
         <h1>Sai Dharshan S</h1>
         <div class="contact-info">
             <p>Chennai, Tamil Nadu, 600077, India</p>
@@ -18,7 +20,7 @@
 
         <section class="summary section">
             <div class="section-title">Summary</div>
-            <p>Hi, Enthusiastic full stack engineer here with a passion for <span class="highlight">Coding</span>, OOPS. I have professional experience in efficient Application Design, development, and maintenance. Experienced in developing web applications and certified <span class="highlight">Az-204 Azure Developer associate</span>. Possess great problem-solving, algorithmic thinking, and analytical skills.</p>
+            <p>Hi, Enthusiastic full stack engineer here with a passion for <span class="highlight">Coding, OOPS</span>. I have professional experience in efficient Application Design, development, and maintenance. Experienced in developing web applications and certified. Possess great problem-solving, algorithmic thinking, and analytical skills.</p>
         </section>
 
         <section class="skills section">
@@ -49,15 +51,17 @@
                     <li>Utilized <span class="highlight">Azure Blob Storage</span> and <span class="highlight">AWS S3</span> for secure storage and optimized retrieval of generated reports.</li>
                     <li>Leveraged <span class="highlight">RabbitMQ</span> to efficiently manage the messaging queue for report generation, ensuring reliable and scalable asynchronous communication within the application.</li>
                 </ul>
+                <br>
                 <div class="achievements">
                     <h4>Achievements:</h4>
                     <ul>
-                        <li>Secured 2nd place in the internal Gen AI hackathon among 12 competing teams. As part of a team of five, played the role of lead, delivering an advanced dashboard and report generation prototype using <span class="highlight">GraphQL</span>, <span class="highlight">GPT APIs</span>, <span class="highlight">DotNet backend</span>, and <span class="highlight">React UI</span>. The prototype allowed users to interact directly with a chat window to analyze their data requirements and generate customized reports and dashboards in real-time.</li>
+                        <li>Secured 2nd place in the internal Gen AI hackathon among 12 competing teams. As part of a team of five, played the role of lead, delivering an advanced dashboard and report generation prototype using <span class="highlight">GraphQL</span>, <span class="highlight">GPT APIs</span>, <span class="highlight">DotNet backend</span>, and <span class="highlight">React UI</span>.</li>
+                        <li>The prototype allowed users to interact directly with a chat window to analyze their data requirements and generate customized reports and dashboards in real-time.</li>
                     </ul>
                 </div>
             </div>
             <div class="experience">
-                <h3>Botminds AI (May 2021 - Present)</h3>
+                <h3>Botminds AI (Feb 2022 - Feb 2023)</h3>
                 <p>Full Stack Developer</p>
                 <ul>
                     <li>Developed and maintained IDP platform using <span class="highlight">.Net Core REST APIs</span>, <span class="highlight">NoSQL</span>, SQL, storage queues, and Angular.</li>
@@ -84,6 +88,27 @@
                 <p>Studied <span class="highlight">SDLC, Web Technologies, DSA, AI, NLP, Machine Learning</span>, and DBMS.</p>
             </div>
         </section>
+
+       
+    </div> <!-- Add download button -->
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="downloadResume()" style="padding: 10px 20px; font-size: 16px;">Download Resume</button>
     </div>
+
+    <!-- JavaScript to handle PDF generation -->
+    <script>
+        function downloadResume() {
+            const element = document.getElementById('resume-content');
+            html2pdf()
+                .from(element)
+                .set({
+                    margin: 0.5,
+                    filename: 'Sai_Dharshan_S_Resume.pdf',
+                    html2canvas: { scale: 3, logging: true, letterRendering: true },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                })
+                .save();
+        }
+    </script>
 </body>
 </html>
