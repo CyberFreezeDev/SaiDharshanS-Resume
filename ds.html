@@ -1,1 +1,114 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Dharshan S - Resume</title>
+    <link rel="stylesheet" href="index.css"> <!-- External CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container" id="resume-content">
+        <h1>Sai Dharshan S</h1>
+        <div class="contact-info">
+            <p>Chennai, Tamil Nadu, 600077, India</p>
+            <p>Email: saidharshanshan@gmail.com</p>
+            <p>Phone: 9361639274</p>
+            <p><a href="https://www.linkedin.com/in/sai-dharshan-s-b98542125/">LinkedIn: Sai Dharshan S</a></p>
+        </div>
+
+        <section class="summary section">
+            <div class="section-title">Summary</div>
+            <p>Motivated Full Stack Engineer with over 3 years of experience in application design and development. Proficient in <span class="highlight">Python, C#, .NET, Django, and Flask</span>, with a strong foundation in AI, NLP, and GenAI applications. Skilled in optimizing performance and fine-tuning <span class="highlight">Large Language Models</span> (LLMs) using techniques like LoRA and PEFT. Passionate about leveraging AI to solve complex business problems.</p>
+        </section>
+
+        <section class="skills section">
+            <div class="section-title">Skills</div>
+            <ul>
+                <li><strong>Programming Languages:</strong> Python, C#, Java, JavaScript, Typescript</li>
+                <li><strong>Backend:</strong> Django, Flask, .NET 6, .NET Core, Web API, SQL Server, MongoDB, RabbitMQ</li>
+                <li><strong>Frontend:</strong> React, Angular, HTML5, CSS</li>
+                <li><strong>AI & ML:</strong> LLMs, GenAI, LoRA, PEFT, GPT APIs, NLP, ML pipelines</li>
+                <li><strong>Cloud & Tools:</strong> Azure Cloud, AWS S3, Docker, Git, MLOps, CI/CD pipelines</li>
+            </ul>
+        </section>
+
+        <section class="certifications section">
+            <div class="section-title">Certifications</div>
+            <ul>
+                <li><strong>Azure Developer Associate (Az204)</strong> (Valid Until May 2024)</li>
+                <li>Proficient in developing and deploying solutions on Azure, with a focus on security and performance optimization.</li>
+            </ul>
+        </section>
+
+        <section class="experience section">
+            <div class="section-title">Work Experience</div>
+
+            <div class="experience">
+                <h3>Integrate.com (Feb 2023 - Present)</h3>
+                <p>Full Stack Engineer</p>
+                <ul>
+                    <li>Designed and optimized reporting features using <span class="highlight">DotNet APIs</span>, <span class="highlight">React</span>, <span class="highlight">MongoDB</span>, and <span class="highlight">RabbitMQ</span>.</li>
+                    <li>Developed self-service "Report 3.0," enabling on-demand report generation with <span class="highlight">Azure Blob Storage</span> and <span class="highlight">AWS S3</span>.</li>
+                    <li>Implemented synchronous report file generation using <span class="highlight">server-side events</span> in <span class="highlight">DotNet</span>, enhancing UX.</li>
+                </ul>
+                <div class="achievements">
+                    <h4>Achievements:</h4>
+                    <ul>
+                        <li>Secured 2nd place in Gen AI hackathon for a <span class="highlight">GraphQL</span> and <span class="highlight">GPT API-powered dashboard prototype</span>, offering real-time data analysis and reporting.</li>
+                        <li>Gained expertise in <span class="highlight">LLMs</span>, designing scalable pipelines, and integrating AI solutions with business requirements.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience">
+                <h3>Botminds AI (Feb 2022 - Feb 2023)</h3>
+                <p>Full Stack Developer</p>
+                <ul>
+                    <li>Developed Intelligent Document Processing (IDP) solutions using <span class="highlight">.Net Core REST APIs</span>, NoSQL, SQL, and Angular.</li>
+                    <li>Optimized platform performance, doubling user concurrency through targeted performance improvements.</li>
+                    <li>Implemented Social Logins (Google, Microsoft, LinkedIn) for Single Sign-On (SSO) functionality.</li>
+                </ul>
+            </div>
+
+            <div class="experience">
+                <h3>Deloitte USI (Jan 2020 - Jan 2022)</h3>
+                <p>Full Stack Developer</p>
+                <ul>
+                    <li>Contributed to financial audit software with a <span class="highlight">DotNet framework backend</span> and microservices architecture.</li>
+                    <li>Enhanced data handling efficiency with optimized SQL queries and server-side processing.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education section">
+            <div class="section-title">Education</div>
+            <div class="education">
+                <h3>Vellore Institute of Technology (July 2015 - May 2020)</h3>
+                <p>Master of Technology, Software Engineering (CGPA: <span class="highlight">8.08</span>)</p>
+                <p>Specialized in <span class="highlight">AI, NLP, ML, and DBMS</span>.</p>
+            </div>
+        </section>
+    </div>
+
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="downloadResume()" style="padding: 10px 20px; font-size: 16px;">Download Resume</button>
+    </div>
+
+    <script>
+        function downloadResume() {
+            const element = document.getElementById('resume-content');
+            html2pdf()
+                .from(element)
+                .set({
+                    margin: [0.5, 0.1, 1, 0.1],
+                    filename: 'Sai_Dharshan_S_Tiger_Analytics_Resume.pdf',
+                    html2canvas: { scale: 3, logging: true, letterRendering: true },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                })
+                .save();
+        }
+    </script>
+</body>
+</html>
