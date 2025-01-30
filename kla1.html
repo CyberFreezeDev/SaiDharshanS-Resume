@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Dharshan S - Resume</title>
+    <link rel="stylesheet" href="index.css"> <!-- External CSS -->
+    <!-- Include html2pdf.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container" id="resume-content">
+        <h1>Sai Dharshan S</h1>
+        <div class="contact-info">
+            <p>Chennai, Tamil Nadu, 600077, India</p>
+            <p>Email: saidharshanshan@gmail.com</p>
+            <p>Phone: 9361639274</p>
+            <p><a href="https://www.linkedin.com/in/sai-dharshan-s-b98542125/">LinkedIn: Sai Dharshan S</a></p>
+        </div>
+
+        <section class="summary section">
+            <div class="section-title">Summary</div>
+            <p>Experienced **Software Engineer** with expertise in **C++, C#, .NET, Windows 32/64-bit applications, and semiconductor process software**. Skilled in designing and developing robust software for **high-performance computing, networking, and debugging**. Strong problem-solving, analytical, and debugging skills with experience in **OOP, COM, MFC, and ATL**. Passionate about delivering high-quality software solutions in **semiconductor, manufacturing, and industrial automation domains**.</p>
+        </section>
+
+        <section class="skills section">
+            <div class="section-title">Skills</div>
+            <ul>
+                <li><strong>Backend:</strong> <span class="highlight">C++, C#, .NET 6</span>, Managed C++, MFC, ATL, COM, Web API, SQL Server, MongoDB, RabbitMQ</li>
+                <li><strong>Windows Development:</strong> <span class="highlight">Windows 32/64-bit applications</span>, Debugging (Visual Studio, WinDbg), UI development (WPF, MFC)</li>
+                <li><strong>Networking & Debugging:</strong> TCP/IP, Sockets, Multi-threading, Network Protocols, Wireshark, Memory Management</li>
+                <li><strong>Cloud & Storage:</strong> Azure Cloud, AWS S3, Blob Storage, Distributed File Systems</li>
+                <li><strong>Frontend:</strong> <span class="highlight">React, JavaScript, HTML5, CSS</span></li>
+                <li><strong>Tools & Methodologies:</strong> UML, OOP, OOD, Git, Agile Development</li>
+            </ul>
+        </section>
+
+        <section class="certifications section">
+            <div class="section-title">Certifications</div>
+            <ul>
+                <li><strong>Az204 - Azure Developer Associate</strong> (Valid Until May 2024)</li>
+                <li>Develop and Deploy Azure compute solutions, Implement security, and monitor solutions on <span class="highlight">Azure Cloud</span>.</li>
+            </ul>
+        </section>
+
+        <section class="experience section">
+            <div class="section-title">Work Experience</div>
+            
+            <div class="experience">
+                <h3>Integrate.com (Feb 2023 - Present)</h3>
+                <p>Full Stack Engineer</p>
+                <ul>
+                    <li>Developed **C++/.NET-based APIs** for high-performance **data processing and real-time analytics**.</li>
+                    <li>Integrated **MFC and COM components** for seamless interaction with legacy systems.</li>
+                    <li>Utilized **RabbitMQ** for asynchronous message processing, enhancing **data pipeline efficiency**.</li>
+                    <li>Optimized **SQL Server** and **MongoDB queries**, improving database performance by 40%.</li>
+                    <li>Leveraged **Azure Blob Storage & AWS S3** for secure report storage and retrieval.</li>
+                </ul>
+            </div>
+
+            <div class="experience">
+                <h3>Botminds AI (Feb 2022 - Feb 2023)</h3>
+                <p>Software Engineer</p>
+                <ul>
+                    <li>Developed **multi-threaded Windows 64-bit applications** for real-time document processing.</li>
+                    <li>Worked on **C++ and .NET Core APIs**, handling large-scale unstructured data.</li>
+                    <li>Integrated **networking and security protocols (SSL/TLS) for enterprise solutions**.</li>
+                    <li>Implemented **performance optimizations** using **profiling tools** like Visual Studio Profiler and WinDbg.</li>
+                </ul>
+            </div>
+
+            <div class="experience">
+                <h3>Deloitte USI (Jan 2020 - Jan 2022)</h3>
+                <p>Software Developer</p>
+                <ul>
+                    <li>Designed and implemented **Windows-based applications using C#, .NET, and WPF**.</li>
+                    <li>Developed **COM-based automation scripts** to integrate internal auditing tools.</li>
+                    <li>Worked with **networking and database teams** to enhance the performance of bulk financial audit data processing.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education section">
+            <div class="section-title">Education</div>
+            <div class="education">
+                <h3>Vellore Institute of Technology (July 2015 - May 2020)</h3>
+                <p>Master of Technology, Software Engineering (CGPA: <span class="highlight">8.08</span>)</p>
+                <p>Studied <span class="highlight">C++, SDLC, Windows Programming, OOP, Networking, Data Structures</span>.</p>
+            </div>
+        </section>
+
+    </div> 
+
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="downloadResume()" style="padding: 10px 20px; font-size: 16px;">Download Resume</button>
+    </div>
+
+    <script>
+        function downloadResume() {
+            const element = document.getElementById('resume-content');
+            html2pdf()
+                .from(element)
+                .set({
+                    margin: [0.5, 0.1, 1, 0.1],
+                    filename: 'Sai_Dharshan_S_Resume.pdf',
+                    html2canvas: { scale: 3, logging: true, letterRendering: true },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                })
+                .save();
+        }
+    </script>
+</body>
+</html>
